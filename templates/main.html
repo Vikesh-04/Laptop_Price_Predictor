@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Laptop Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h3 class="title">Laptop Price Predictor</h3>
+                    <form method="post" action="{{ url_for('predict')}}">
+                    	<div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">Brand</label>
+	                                <select name="Brand" class="input--style-4" required>
+	                                <option value="" disabled selected>Select your option</option>
+									<option value='Acer'>Acer</option>
+                                    <option value='Asus'>Asus</option>
+                                    <option value='HP'>HP</option>
+                                    <option value='Dell'>Dell</option>
+                                    <option value='Lenovo'>Lenovo</option>
+                                    <option value='MSI'>MSI</option>
+	                                </select>
+	                             </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+									<label class="label">Processor Core</label>
+	                                <select name="Core" class="input--style-4" required>
+	                                	<option value="" disabled selected>Select your option</option>
+									<option value='i3'>i3</option>
+									<option value='i5'>i5</option>
+									<option value='i7'>i7</option>
+									<option value='i9'>i9</option>
+	                                </select>
+	                             </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">Processor Generation</label>
+	                                <select name="Generation" class="input--style-4" required>
+	                                	<option value="" disabled selected>Select your option</option>
+									<option value=5>5</option>
+									<option value=6>6</option>
+									<option value=7>7</option>
+									<option value=8>8</option>
+									<option value=9>9</option>
+									<option value=10>10</option>
+									<option value=11>11</option>
+	                                </select>
+	                             </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Storage type</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">HDD
+                                            <input type="radio" checked="checked" name="Storage" value='HDD'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container m-r-45">SSD
+                                            <input type="radio" name="Storage" value='SSD'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container ">Dual
+                                            <input type="radio" name="Storage" value='Dual'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">HDD</label>
+	                                <select name="HDD" class="input--style-4" required>
+                                    <option value=0>0</option>
+									<option value=512>512 GB</option>
+									<option value=1024>1 TB</option>
+									<option value=2048>2 TB</option>
+	                                </select>
+	                             </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+									<label class="label">SSD</label>
+	                                <select name="SSD" class="input--style-4" required>
+                                    <option value=0>0</option>				
+									<option value=128>128 GB</option>
+									<option value=256>256 GB</option>
+									<option value=512>512 GB</option>
+									<option value=1024>1 TB</option>
+									<option value=2048>2 TB</option>
+	                                </select>
+	                             </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">RAM</label>
+	                                <select name="RAM" class="input--style-4" required>
+	                                	<option value="" disabled selected>Select your option</option>
+                                    <option value=4>4 GB</option>
+                                    <option value=6>6 GB</option>
+                                    <option value=8>8 GB</option>
+                                    <option value=12>12 GB</option>
+                                    <option value=16>16 GB</option>
+	                                </select>
+	                             </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Dedicated Graphics</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="radio" name="Dedicated_Graphics" value='yes'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                            <input type="radio" checked="checked" name="Dedicated_Graphics" value='no'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">Graphics</label>
+	                                <select name="Graphics" class="input--style-4" required>
+                                    <option value=0>0</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=6>6</option>
+                                    <option value=8>8</option>
+	                                </select>
+	                             </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Touchscreen</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Yes
+                                            <input type="radio" name="Touchscreen" value='yes'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">No
+                                            <input type="radio" checked="checked" name="Touchscreen" value='no'>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                        	<div class="col-2">
+                                <div class="input-group">
+									<label class="label">Display size</label>
+	                                <select name="Display_size" class="input--style-4" required>
+	                                	<option value="" disabled selected>Select your option</option>
+                                	<option value=13>13</option>
+                                    <option value=14>14</option>
+                                    <option value=15>15</option>
+                                    <option value=16>16</option>
+                                    <option value=17>17</option>
+	                                </select>
+	                             </div>
+                            </div>
+                        	<div class="p-t-15">
+                            	<button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        	</div>
+                        </div>
+                        <h2>{{ prediction_text }}</h2>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
